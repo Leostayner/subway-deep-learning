@@ -879,9 +879,6 @@ MonoBehaviour:
     broadcastingBrains:
     - {fileID: 11400000, guid: ec43a09b1e198d147b268b264c47dd72, type: 2}
     _brainsToControl: []
-  originalGravity: {x: 0, y: 0, z: 0}
-  originalFixedDeltaTime: 0
-  originalMaximumDeltaTime: 0
   maxSteps: 0
   trainingConfiguration:
     width: 128
@@ -897,16 +894,6 @@ MonoBehaviour:
     targetFrameRate: 60
   resetParameters:
     resetParameters: []
-  isCommunicatorOn: 0
-  isInference: 1
-  done: 0
-  maxStepReached: 0
-  episodeCount: 0
-  stepCount: 0
-  totalStepCount: 0
-  modeSwitched: 0
-  logPath: 
-  firstAcademyReset: 0
   agentRunSpeed: 1.5
   agentRotationSpeed: 1
   goalScoredMaterial: {fileID: 2100000, guid: 80ffa2c5b96364e4b80fbb2e42b0af3d, type: 2}

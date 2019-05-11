@@ -8,6 +8,9 @@ public class SubwayAgent : Agent
     public GameObject ground;
     public GameObject redGoal;
 
+    public float xPos;
+    public float zPos;
+
     RayPerception rayPer;
     Rigidbody agentRB;
     Material groundMaterial;
@@ -100,7 +103,9 @@ public class SubwayAgent : Agent
     public override void AgentReset()
     {
         agentRB.velocity *= 0f;
-        transform.position = new Vector3(-5f, 0.5f, Random.Range(-3f, 3f)) + ground.transform.position;
+        xPos = Random.Range(-6.5f, -0.5f);
+        zPos = Random.Range(-4f, -4f);
+        transform.position = new Vector3(xPos, 0.25f, zPos) + ground.transform.position;
         transform.rotation = Quaternion.Euler(0f, Random.Range(0f, 360f), 0f);
         
     }
