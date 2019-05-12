@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: SubwayBrain
   m_EditorClassIdentifier: 
   brainParameters:
-    vectorObservationSize: 21
+    vectorObservationSize: 36
     numStackedVectorObservations: 3
     vectorActionSize: 05000000
     cameraResolutions: []

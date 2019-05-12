@@ -3,7 +3,13 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - wall
+  - ground
+  - redGoal
+  - blueGoal
+  - blueAgent
+  - redAgent
   layers:
   - Default
   - TransparentFX

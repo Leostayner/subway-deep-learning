@@ -5,11 +5,15 @@ using MLAgents;
 
 public class SubwayAgent : Agent
 {
-    public GameObject ground;
-    public GameObject redGoal;
 
-    public float xPos;
-    public float zPos;
+    public enum Team
+    {
+        Red,
+        Blue
+    }
+
+    public GameObject ground;
+    public Team team;
 
     RayPerception rayPer;
     Rigidbody agentRB;
@@ -31,7 +35,7 @@ public class SubwayAgent : Agent
     {
         float rayDistance = 12f;
         float[] rayAngles = { 20f, 60f, 90f, 120f, 160f };
-        string[] detectableObjects = { "redGoal", "wall" };
+        string[] detectableObjects = { "redGoal", "blueGoal", "redAgent", "blueAgent", "wall" };
         AddVectorObs(GetStepCount() / (float)agentParameters.maxStep);
         AddVectorObs(rayPer.Perceive(rayDistance, rayAngles, detectableObjects, 0f, 0f));
     }
@@ -84,29 +88,54 @@ public class SubwayAgent : Agent
 
     void OnCollisionEnter(Collision col)
     {
-        if (col.gameObject.CompareTag("redGoal") || col.gameObject.CompareTag("wall"))
+        if (col.gameObject.CompareTag("redGoal") || col.gameObject.CompareTag("blueGoal"))
         {
-            if (col.gameObject.CompareTag("redGoal"))
+            if ((col.gameObject.CompareTag("redGoal") && (team == Team.Red)) || (col.gameObject.CompareTag("blueGoal") && (team == Team.Blue)))
             {
                 SetReward(1f);
                 StartCoroutine(GoalScoredSwapGroundMaterial(academy.goalScoredMaterial, 0.5f));
             }
             else
             {
-                SetReward(-0.1f);
+                SetReward(-0.5f);
                 StartCoroutine(GoalScoredSwapGroundMaterial(academy.failMaterial, 0.5f));
             }
             Done();
         }
-    }
+
+        if (col.gameObject.CompareTag("blueAgent") || col.gameObject.CompareTag("redAgent"))
+        {
+            if ((col.gameObject.CompareTag("redAgent") && (team == Team.Red)) || (col.gameObject.CompareTag("blueAgent") && (team == Team.Blue)))
+            {
+                SetReward(-0.01f);
+            }
+            else
+            {
+                SetReward(-0.01f);
+            }
+        }
+    } 
 
     public override void AgentReset()
     {
         agentRB.velocity *= 0f;
-        xPos = Random.Range(-6.5f, -0.5f);
-        zPos = Random.Range(-4f, -4f);
-        transform.position = new Vector3(xPos, 0.25f, zPos) + ground.transform.position;
-        transform.rotation = Quaternion.Euler(0f, Random.Range(0f, 360f), 0f);
-        
+
+        if (team == Team.Red)
+        {
+            float xPos = Random.Range(-4.5f, -0.5f);
+            float zPos = Random.Range(-4.0f, 4.0f);
+
+            transform.position = new Vector3(xPos, 0.25f, zPos) + ground.transform.position;
+            transform.rotation = Quaternion.Euler(0f, Random.Range(0f, 360f), 0f);
+        }
+        else
+        {
+            float xPos = Random.Range(0.5f, 4.5f);
+            float zPos = Random.Range(-4.0f, 4.0f);
+
+            transform.position = new Vector3(xPos, 0.25f, zPos) + ground.transform.position;
+            transform.rotation = Quaternion.Euler(0f, Random.Range(0f, 360f), 0f);
+        }
+
     }
 }
