@@ -415,8 +415,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   redAgent: {fileID: 8263724644046718838}
   blueAgent: {fileID: 7087348092536377967}
-  numRedAgents: 3
-  numBlueAgents: 3
+  numRedAgents: 4
+  numBlueAgents: 4
 --- !u!1 &7087348091851080967
 GameObject:
   m_ObjectHideFlags: 0
@@ -447,8 +447,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 1, z: 3}
   m_LocalScale: {x: 0.5, y: 2, z: 3}
   m_Children: []
-  m_Father: {fileID: 7087348092358667752}
-  m_RootOrder: 4
+  m_Father: {fileID: 4008567252327942807}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &7087348091851080964
 MeshFilter:
@@ -630,8 +630,7 @@ Transform:
   - {fileID: 7087348092347698457}
   - {fileID: 7087348092529967773}
   - {fileID: 7087348093388307009}
-  - {fileID: 7087348091851081083}
-  - {fileID: 7087348092964809816}
+  - {fileID: 4008567252327942807}
   m_Father: {fileID: 4192485141434688910}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -772,7 +771,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7087348092536377967}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &7087348092536377954
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -851,7 +850,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40b9c5d0b49d43f45b22929afd5f6d9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  brain: {fileID: 11400000, guid: ec43a09b1e198d147b268b264c47dd72, type: 2}
+  brain: {fileID: 0}
   agentParameters:
     agentCameras: []
     agentRenderTextures: []
@@ -859,7 +858,11 @@ MonoBehaviour:
     resetOnDone: 1
     onDemandDecision: 0
     numberOfActionsBetweenDecisions: 6
+  noWallBrain: {fileID: 11400000, guid: ede512bc5b54baf48b728a0307e84144, type: 2}
+  wallBrain: {fileID: 11400000, guid: 0c843b49fb4519d44b22f4c11c173ea1, type: 2}
+  multiAgentBrain: {fileID: 11400000, guid: ec43a09b1e198d147b268b264c47dd72, type: 2}
   ground: {fileID: 7087348092718867388}
+  obstacleWall: {fileID: 8511336072992495345}
   team: 1
 --- !u!114 &7087348092536377966
 MonoBehaviour:
@@ -1177,8 +1180,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 1, z: -3}
   m_LocalScale: {x: 0.5, y: 2, z: 3}
   m_Children: []
-  m_Father: {fileID: 7087348092358667752}
-  m_RootOrder: 5
+  m_Father: {fileID: 4008567252327942807}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &7087348092964809817
 MeshFilter:
@@ -1648,7 +1651,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8263724644046718838}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &7369043324576198744
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1727,7 +1730,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40b9c5d0b49d43f45b22929afd5f6d9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  brain: {fileID: 11400000, guid: ec43a09b1e198d147b268b264c47dd72, type: 2}
+  brain: {fileID: 0}
   agentParameters:
     agentCameras: []
     agentRenderTextures: []
@@ -1735,7 +1738,11 @@ MonoBehaviour:
     resetOnDone: 1
     onDemandDecision: 0
     numberOfActionsBetweenDecisions: 6
+  noWallBrain: {fileID: 11400000, guid: ede512bc5b54baf48b728a0307e84144, type: 2}
+  wallBrain: {fileID: 11400000, guid: 0c843b49fb4519d44b22f4c11c173ea1, type: 2}
+  multiAgentBrain: {fileID: 11400000, guid: ec43a09b1e198d147b268b264c47dd72, type: 2}
   ground: {fileID: 7087348092718867388}
+  obstacleWall: {fileID: 8511336072992495345}
   team: 0
 --- !u!114 &7433569723269883547
 MonoBehaviour:
@@ -1749,3 +1756,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb172294dbbcc408286b156a2c4b553c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &8511336072992495345
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4008567252327942807}
+  m_Layer: 0
+  m_Name: ObstacleWall
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4008567252327942807
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8511336072992495345}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.01, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 7087348091851081083}
+  - {fileID: 7087348092964809816}
+  m_Father: {fileID: 7087348092358667752}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

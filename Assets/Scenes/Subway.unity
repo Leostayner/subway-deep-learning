@@ -893,12 +893,20 @@ MonoBehaviour:
     timeScale: 1
     targetFrameRate: 60
   resetParameters:
-    resetParameters: []
+    resetParameters:
+    - key: ObstacleWall
+      value: 1
+    - key: NoObstacleWall
+      value: -0.1
+    - key: MultiAgents
+      value: 1
+    - key: NoMultiAgents
+      value: 0
   agentRunSpeed: 1.5
   agentRotationSpeed: 1
   goalScoredMaterial: {fileID: 2100000, guid: 80ffa2c5b96364e4b80fbb2e42b0af3d, type: 2}
   failMaterial: {fileID: 2100000, guid: 882d882b99bce44c6863ec8d3760e9ca, type: 2}
-  gravityMultiplier: 2
+  gravityMultiplier: 2.5
 --- !u!4 &1449518235
 Transform:
   m_ObjectHideFlags: 0
@@ -1200,7 +1208,7 @@ PrefabInstance:
     - target: {fileID: 7087348093878914984, guid: 9acc96ad9e5bd2b4e971352c7ed598b1,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.3
+      value: 0.146
       objectReference: {fileID: 0}
     - target: {fileID: 7087348093151153332, guid: 9acc96ad9e5bd2b4e971352c7ed598b1,
         type: 3}
@@ -1215,7 +1223,7 @@ PrefabInstance:
     - target: {fileID: 7087348093151153332, guid: 9acc96ad9e5bd2b4e971352c7ed598b1,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.3
+      value: -0.154
       objectReference: {fileID: 0}
     - target: {fileID: 7087348092784683501, guid: 9acc96ad9e5bd2b4e971352c7ed598b1,
         type: 3}
@@ -1225,7 +1233,7 @@ PrefabInstance:
     - target: {fileID: 7087348092784683501, guid: 9acc96ad9e5bd2b4e971352c7ed598b1,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.2
+      value: 0.046
       objectReference: {fileID: 0}
     - target: {fileID: 7087348092784683501, guid: 9acc96ad9e5bd2b4e971352c7ed598b1,
         type: 3}
@@ -1257,5 +1265,11 @@ PrefabInstance:
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7087348092536377965, guid: 9acc96ad9e5bd2b4e971352c7ed598b1,
+        type: 3}
+      propertyPath: noWallBrain
+      value: 
+      objectReference: {fileID: 11400000, guid: ede512bc5b54baf48b728a0307e84144,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9acc96ad9e5bd2b4e971352c7ed598b1, type: 3}

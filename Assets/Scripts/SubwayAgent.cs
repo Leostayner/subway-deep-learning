@@ -12,9 +12,14 @@ public class SubwayAgent : Agent
         Blue
     }
 
+    public Brain noWallBrain;
+    public Brain wallBrain;
+    public Brain multiAgentBrain;
     public GameObject ground;
+    public GameObject obstacleWall;
     public Team team;
-
+    int configuration;
+    
     RayPerception rayPer;
     Rigidbody agentRB;
     Material groundMaterial;
@@ -29,6 +34,7 @@ public class SubwayAgent : Agent
         agentRB = GetComponent<Rigidbody>();
         groundRenderer = ground.GetComponent<Renderer>();
         groundMaterial = groundRenderer.material;
+        configuration = Random.Range(0, 2);
     }
 
     public override void CollectObservations()
@@ -119,6 +125,7 @@ public class SubwayAgent : Agent
     public override void AgentReset()
     {
         agentRB.velocity *= 0f;
+        configuration = Random.Range(0, 2);
 
         if (team == Team.Red)
         {
@@ -137,5 +144,43 @@ public class SubwayAgent : Agent
             transform.rotation = Quaternion.Euler(0f, Random.Range(0f, 360f), 0f);
         }
 
+    }
+
+    private void FixedUpdate()
+    {
+        if (configuration != -1)
+        {
+            ConfigureAgent(configuration);
+            configuration = -1;
+        }
+    }
+
+    void ConfigureAgent(int config)
+    {
+        if (config == 0) // 1 Team without Walls
+        {
+            obstacleWall.transform.localScale = new Vector3(
+                obstacleWall.transform.localScale.x,
+                academy.resetParameters["NoObstacleWall"],
+                obstacleWall.transform.localScale.z);
+            GiveBrain(noWallBrain);
+        }
+        else if (config == 1) // 1 Team with Walls
+        {
+            obstacleWall.transform.localScale = new Vector3(
+                obstacleWall.transform.localScale.x,
+                academy.resetParameters["ObstacleWall"],
+                obstacleWall.transform.localScale.z);
+            GiveBrain(wallBrain);
+        }
+        else // 2 Teams with Walls
+        {
+            obstacleWall.transform.localScale = new Vector3(
+                 obstacleWall.transform.localScale.x,
+                 academy.resetParameters["ObstacleWall"],
+                 obstacleWall.transform.localScale.z);
+
+            GiveBrain(multiAgentBrain);
+        }
     }
 }
