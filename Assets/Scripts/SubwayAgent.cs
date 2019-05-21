@@ -12,9 +12,6 @@ public class SubwayAgent : Agent
         Blue
     }
 
-    public Brain noWallBrain;
-    public Brain wallBrain;
-    public Brain multiAgentBrain;
     public GameObject ground;
     public GameObject obstacleWall;
     public Team team;
@@ -121,11 +118,11 @@ public class SubwayAgent : Agent
             }
         }
     } 
-
+    
     public override void AgentReset()
     {
         agentRB.velocity *= 0f;
-        configuration = Random.Range(0, 2);
+        //configuration = Random.Range(0, 2);
 
         if (team == Team.Red)
         {
@@ -146,6 +143,7 @@ public class SubwayAgent : Agent
 
     }
 
+    /* 
     private void FixedUpdate()
     {
         if (configuration != -1)
@@ -182,5 +180,5 @@ public class SubwayAgent : Agent
 
             GiveBrain(multiAgentBrain);
         }
-    }
+    }*/
 }

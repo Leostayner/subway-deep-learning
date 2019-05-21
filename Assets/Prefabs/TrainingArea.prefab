@@ -850,7 +850,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40b9c5d0b49d43f45b22929afd5f6d9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  brain: {fileID: 0}
+  brain: {fileID: 11400000, guid: ec43a09b1e198d147b268b264c47dd72, type: 2}
   agentParameters:
     agentCameras: []
     agentRenderTextures: []
@@ -860,7 +860,7 @@ MonoBehaviour:
     numberOfActionsBetweenDecisions: 6
   noWallBrain: {fileID: 11400000, guid: ede512bc5b54baf48b728a0307e84144, type: 2}
   wallBrain: {fileID: 11400000, guid: 0c843b49fb4519d44b22f4c11c173ea1, type: 2}
-  multiAgentBrain: {fileID: 11400000, guid: ec43a09b1e198d147b268b264c47dd72, type: 2}
+  multiAgentBrain: {fileID: 0}
   ground: {fileID: 7087348092718867388}
   obstacleWall: {fileID: 8511336072992495345}
   team: 1
@@ -1730,7 +1730,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40b9c5d0b49d43f45b22929afd5f6d9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  brain: {fileID: 0}
+  brain: {fileID: 11400000, guid: ec43a09b1e198d147b268b264c47dd72, type: 2}
   agentParameters:
     agentCameras: []
     agentRenderTextures: []

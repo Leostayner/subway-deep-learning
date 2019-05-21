@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.4366756, g: 0.48427194, b: 0.5645252, a: 1}
+  m_IndirectSpecularColor: {r: 0.43667546, g: 0.48427135, b: 0.5645225, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -607,7 +607,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_BoundingSphereOverride: {x: 0, y: -0.49902582, z: 5.52e-43, w: -0.49902582}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
@@ -878,7 +878,8 @@ MonoBehaviour:
   broadcastHub:
     broadcastingBrains:
     - {fileID: 11400000, guid: ec43a09b1e198d147b268b264c47dd72, type: 2}
-    _brainsToControl: []
+    _brainsToControl:
+    - {fileID: 11400000, guid: ec43a09b1e198d147b268b264c47dd72, type: 2}
   maxSteps: 0
   trainingConfiguration:
     width: 128
@@ -895,12 +896,8 @@ MonoBehaviour:
   resetParameters:
     resetParameters:
     - key: ObstacleWall
-      value: 1
-    - key: NoObstacleWall
-      value: -0.1
+      value: 0
     - key: MultiAgents
-      value: 1
-    - key: NoMultiAgents
       value: 0
   agentRunSpeed: 1.5
   agentRotationSpeed: 1
