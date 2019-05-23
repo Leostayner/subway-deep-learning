@@ -415,8 +415,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   redAgent: {fileID: 8263724644046718838}
   blueAgent: {fileID: 7087348092536377967}
-  numRedAgents: 4
-  numBlueAgents: 4
+  numRedAgents: 0
+  numBlueAgents: 0
 --- !u!1 &7087348091851080967
 GameObject:
   m_ObjectHideFlags: 0
@@ -858,9 +858,6 @@ MonoBehaviour:
     resetOnDone: 1
     onDemandDecision: 0
     numberOfActionsBetweenDecisions: 6
-  noWallBrain: {fileID: 11400000, guid: ede512bc5b54baf48b728a0307e84144, type: 2}
-  wallBrain: {fileID: 11400000, guid: 0c843b49fb4519d44b22f4c11c173ea1, type: 2}
-  multiAgentBrain: {fileID: 0}
   ground: {fileID: 7087348092718867388}
   obstacleWall: {fileID: 8511336072992495345}
   team: 1
@@ -1738,9 +1735,6 @@ MonoBehaviour:
     resetOnDone: 1
     onDemandDecision: 0
     numberOfActionsBetweenDecisions: 6
-  noWallBrain: {fileID: 11400000, guid: ede512bc5b54baf48b728a0307e84144, type: 2}
-  wallBrain: {fileID: 11400000, guid: 0c843b49fb4519d44b22f4c11c173ea1, type: 2}
-  multiAgentBrain: {fileID: 11400000, guid: ec43a09b1e198d147b268b264c47dd72, type: 2}
   ground: {fileID: 7087348092718867388}
   obstacleWall: {fileID: 8511336072992495345}
   team: 0

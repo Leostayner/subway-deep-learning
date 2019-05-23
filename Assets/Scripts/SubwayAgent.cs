@@ -38,7 +38,7 @@ public class SubwayAgent : Agent
     {
         float rayDistance = 12f;
         float[] rayAngles = { 20f, 60f, 90f, 120f, 160f };
-        string[] detectableObjects = { "redGoal", "blueGoal", "redAgent", "blueAgent", "wall" };
+        string[] detectableObjects = { "redGoal", "blueGoal", "redAgent", "blueAgent", "wall", "ObstacleWall" };
         AddVectorObs(GetStepCount() / (float)agentParameters.maxStep);
         AddVectorObs(rayPer.Perceive(rayDistance, rayAngles, detectableObjects, 0f, 0f));
     }
@@ -110,11 +110,11 @@ public class SubwayAgent : Agent
         {
             if ((col.gameObject.CompareTag("redAgent") && (team == Team.Red)) || (col.gameObject.CompareTag("blueAgent") && (team == Team.Blue)))
             {
-                SetReward(-0.01f);
+                SetReward(-0.1f);
             }
             else
             {
-                SetReward(-0.01f);
+                SetReward(-0.1f);
             }
         }
     } 

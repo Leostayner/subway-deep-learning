@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using MLAgents;
 
 public class AgentLogic : MonoBehaviour
 {
@@ -9,13 +10,13 @@ public class AgentLogic : MonoBehaviour
     
     SubwayAcademy academy;
 
-    public int numRedAgents;
-    public int numBlueAgents;
+    public int numAgents;
 
     void Start()
     {
-       CreateAgent(numRedAgents, redAgent);
-       CreateAgent(numBlueAgents, blueAgent);
+    academy = FindObjectOfType<SubwayAcademy>();
+    numAgents  = (int)academy.resetParameters["MultiAgents"];
+    
     }
 
     void CreateAgent(int numAgents, GameObject agent)
@@ -45,6 +46,17 @@ public class AgentLogic : MonoBehaviour
 
                 GameObject bana = Instantiate(agent, position + transform.position, rotation);
             }
+        }
+    }
+    void Update()
+    {
+        if(numAgents != (int)academy.resetParameters["MultiAgents"])
+        {
+            print(numAgents);
+            numAgents = (int)academy.resetParameters["MultiAgents"];
+            CreateAgent(numAgents, redAgent);
+            CreateAgent(numAgents, blueAgent);
+
         }
     }
 }
