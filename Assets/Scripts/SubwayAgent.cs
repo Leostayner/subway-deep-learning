@@ -143,16 +143,15 @@ public class SubwayAgent : Agent
 
     }
 
-    /* 
-    private void FixedUpdate()
+    private void Update()
     {
-        if (configuration != -1)
-        {
-            ConfigureAgent(configuration);
-            configuration = -1;
-        }
+        obstacleWall.transform.localScale = new Vector3(
+                obstacleWall.transform.localScale.x,
+                academy.resetParameters["ObstacleWall"],
+                obstacleWall.transform.localScale.z);    
     }
 
+    /* 
     void ConfigureAgent(int config)
     {
         if (config == 0) // 1 Team without Walls

@@ -607,7 +607,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: -0.49902582, z: 5.52e-43, w: -0.49902582}
+  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
@@ -878,8 +878,7 @@ MonoBehaviour:
   broadcastHub:
     broadcastingBrains:
     - {fileID: 11400000, guid: ec43a09b1e198d147b268b264c47dd72, type: 2}
-    _brainsToControl:
-    - {fileID: 11400000, guid: ec43a09b1e198d147b268b264c47dd72, type: 2}
+    _brainsToControl: []
   maxSteps: 0
   trainingConfiguration:
     width: 128
@@ -896,9 +895,9 @@ MonoBehaviour:
   resetParameters:
     resetParameters:
     - key: ObstacleWall
-      value: 0
+      value: 1
     - key: MultiAgents
-      value: 0
+      value: 4
   agentRunSpeed: 1.5
   agentRotationSpeed: 1
   goalScoredMaterial: {fileID: 2100000, guid: 80ffa2c5b96364e4b80fbb2e42b0af3d, type: 2}

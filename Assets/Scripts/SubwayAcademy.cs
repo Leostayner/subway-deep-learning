@@ -16,8 +16,5 @@ public class SubwayAcademy : Academy
         Physics.gravity *= gravityMultiplier;
     }
 
-    public override void AcademyReset()
-    {
-
-    }
+    public override void AcademyReset(){}
 }

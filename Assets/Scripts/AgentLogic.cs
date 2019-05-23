@@ -6,6 +6,9 @@ public class AgentLogic : MonoBehaviour
 {
     public GameObject redAgent;
     public GameObject blueAgent;
+    
+    SubwayAcademy academy;
+
     public int numRedAgents;
     public int numBlueAgents;
 
