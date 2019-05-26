@@ -415,8 +415,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   redAgent: {fileID: 8263724644046718838}
   blueAgent: {fileID: 7087348092536377967}
-  numRedAgents: 0
-  numBlueAgents: 0
+  numAgents: 0
 --- !u!1 &7087348091851080967
 GameObject:
   m_ObjectHideFlags: 0

@@ -36,7 +36,7 @@ public class SubwayAgent : Agent
 
     public override void CollectObservations()
     {
-        float rayDistance = 12f;
+        float rayDistance = 5f;
         float[] rayAngles = { 20f, 60f, 90f, 120f, 160f };
         string[] detectableObjects = { "redGoal", "blueGoal", "redAgent", "blueAgent", "wall", "ObstacleWall" };
         AddVectorObs(GetStepCount() / (float)agentParameters.maxStep);
@@ -110,12 +110,16 @@ public class SubwayAgent : Agent
         {
             if ((col.gameObject.CompareTag("redAgent") && (team == Team.Red)) || (col.gameObject.CompareTag("blueAgent") && (team == Team.Blue)))
             {
-                SetReward(-0.1f);
+                AddReward(-0.1f);
             }
             else
             {
-                SetReward(-0.1f);
+                AddReward(-0.1f);
             }
+        }
+        else // Wall or ObstacleWall
+        {
+            AddReward(-0.01f);
         }
     } 
     
@@ -140,7 +144,6 @@ public class SubwayAgent : Agent
             transform.position = new Vector3(xPos, 0.25f, zPos) + ground.transform.position;
             transform.rotation = Quaternion.Euler(0f, Random.Range(0f, 360f), 0f);
         }
-
     }
 
     private void Update()
