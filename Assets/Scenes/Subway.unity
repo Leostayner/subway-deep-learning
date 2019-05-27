@@ -878,8 +878,7 @@ MonoBehaviour:
   broadcastHub:
     broadcastingBrains:
     - {fileID: 11400000, guid: ec43a09b1e198d147b268b264c47dd72, type: 2}
-    _brainsToControl:
-    - {fileID: 11400000, guid: ec43a09b1e198d147b268b264c47dd72, type: 2}
+    _brainsToControl: []
   maxSteps: 0
   trainingConfiguration:
     width: 128
@@ -898,7 +897,7 @@ MonoBehaviour:
     - key: ObstacleWall
       value: 1
     - key: MultiAgents
-      value: 4
+      value: 0
   agentRunSpeed: 1.5
   agentRotationSpeed: 1
   goalScoredMaterial: {fileID: 2100000, guid: 80ffa2c5b96364e4b80fbb2e42b0af3d, type: 2}
@@ -1273,10 +1272,5 @@ PrefabInstance:
       propertyPath: academy
       value: 
       objectReference: {fileID: 1449518234}
-    - target: {fileID: 1156191480040163235, guid: 9acc96ad9e5bd2b4e971352c7ed598b1,
-        type: 3}
-      propertyPath: numAgents
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9acc96ad9e5bd2b4e971352c7ed598b1, type: 3}
