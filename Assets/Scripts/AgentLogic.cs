@@ -9,13 +9,12 @@ public class AgentLogic : MonoBehaviour
     public GameObject blueAgent;
     
     SubwayAcademy academy;
-
-    public int numAgents;
+    int numAgents;
 
     void Start()
     {
     academy = FindObjectOfType<SubwayAcademy>();
-    numAgents  = (int)academy.resetParameters["MultiAgents"];
+    numAgents = (int)academy.resetParameters["MultiAgents"];
     
     }
 
@@ -29,7 +28,7 @@ public class AgentLogic : MonoBehaviour
                 float zPos = Random.Range(-4f, 4f);
 
                 Vector3 position = new Vector3(xPos, 0.25f, zPos);
-                Quaternion rotation = Quaternion.Euler(0f, Random.Range(0f, 360f), 0f);
+                Quaternion rotation = Quaternion.Euler(0f, 90f, 0f);
 
                 GameObject bana = Instantiate(agent, position + transform.position, rotation);
             }
@@ -42,20 +41,20 @@ public class AgentLogic : MonoBehaviour
                 float zPos = Random.Range(-4f, 4f);
 
                 Vector3 position = new Vector3(xPos, 0.25f, zPos);
-                Quaternion rotation = Quaternion.Euler(0f, Random.Range(0f, 360f), 0f);
+                Quaternion rotation = Quaternion.Euler(0f, -90f, 0f);
 
                 GameObject bana = Instantiate(agent, position + transform.position, rotation);
             }
         }
     }
+
     void Update()
     {
         if(numAgents != (int)academy.resetParameters["MultiAgents"])
         {
-            print(numAgents);
             numAgents = (int)academy.resetParameters["MultiAgents"];
-            CreateAgent(numAgents, redAgent);
-            CreateAgent(numAgents, blueAgent);
+            CreateAgent(1, redAgent);
+            CreateAgent(1, blueAgent);
 
         }
     }

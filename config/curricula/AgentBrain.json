@@ -1,11 +1,11 @@
 {
     "measure" : "progress",
-    "thresholds" : [0.1, 0.2, 0.4, 0.6],
+    "thresholds" : [0.1, 0.2, 0.5, 0.75],
     "min_lesson_length": 100,
     "signal_smoothing" : true, 
     "parameters" : 
     {
         "ObstacleWall" : [-0.1, -0.1, 1.0, 1.0, 1.0],
-        "MultiAgents"  : [0,    1,    2,   3,   4]
+        "MultiAgents"  : [0,    1,    1,   2,   3]
     }
 }

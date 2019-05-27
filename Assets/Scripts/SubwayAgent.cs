@@ -15,7 +15,6 @@ public class SubwayAgent : Agent
     public GameObject ground;
     public GameObject obstacleWall;
     public Team team;
-    int configuration;
     
     RayPerception rayPer;
     Rigidbody agentRB;
@@ -31,12 +30,11 @@ public class SubwayAgent : Agent
         agentRB = GetComponent<Rigidbody>();
         groundRenderer = ground.GetComponent<Renderer>();
         groundMaterial = groundRenderer.material;
-        configuration = Random.Range(0, 2);
     }
 
     public override void CollectObservations()
     {
-        float rayDistance = 5f;
+        float rayDistance = 12f;
         float[] rayAngles = { 20f, 60f, 90f, 120f, 160f };
         string[] detectableObjects = { "redGoal", "blueGoal", "redAgent", "blueAgent", "wall", "ObstacleWall" };
         AddVectorObs(GetStepCount() / (float)agentParameters.maxStep);
@@ -110,11 +108,11 @@ public class SubwayAgent : Agent
         {
             if ((col.gameObject.CompareTag("redAgent") && (team == Team.Red)) || (col.gameObject.CompareTag("blueAgent") && (team == Team.Blue)))
             {
-                AddReward(-0.3f);
+                AddReward(-0.2f);
             }
             else
             {
-                AddReward(-0.3f);
+                AddReward(-0.25f);
             }
         }
         else // Wall or ObstacleWall
@@ -126,7 +124,6 @@ public class SubwayAgent : Agent
     public override void AgentReset()
     {
         agentRB.velocity *= 0f;
-        //configuration = Random.Range(0, 2);
 
         if (team == Team.Red)
         {
