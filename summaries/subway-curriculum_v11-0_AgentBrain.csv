@@ -1,0 +1,25 @@
+Brain name,Time to update policy,Time since start of training,Time for last experience collection,Number of experiences used for training,Mean return
+AgentBrain,1.043,11.144,8.825,10243,-0.798
+AgentBrain,0.795,19.642,7.220,10305,-0.744
+AgentBrain,0.743,28.047,7.190,10278,-0.688
+AgentBrain,0.738,36.794,7.501,10256,-0.606
+AgentBrain,0.734,45.405,7.381,10288,-0.504
+AgentBrain,0.737,53.953,7.313,10276,-0.412
+AgentBrain,1.045,64.694,9.077,10257,-0.344
+AgentBrain,0.873,74.683,8.538,10255,-0.268
+AgentBrain,0.839,84.533,8.430,10275,-0.183
+AgentBrain,0.737,93.432,7.659,10272,-0.106
+AgentBrain,0.738,102.032,7.363,10292,-0.016
+AgentBrain,0.746,111.146,7.848,10262,0.054
+AgentBrain,0.733,119.841,7.457,10252,0.138
+AgentBrain,0.756,128.545,7.444,10244,0.193
+AgentBrain,0.751,137.492,7.680,10269,0.252
+AgentBrain,0.762,146.317,7.542,10261,0.307
+AgentBrain,0.737,155.609,8.016,10260,0.354
+AgentBrain,0.738,164.459,7.578,10243,0.395
+AgentBrain,0.737,173.662,7.931,10249,0.426
+AgentBrain,0.739,182.746,7.803,10242,0.456
+AgentBrain,0.742,191.909,7.882,10251,0.486
+AgentBrain,0.739,201.023,7.817,10246,0.512
+AgentBrain,0.737,209.203,7.020,10258,0.527
+AgentBrain,0.753,215.840,5.613,10252,0.532

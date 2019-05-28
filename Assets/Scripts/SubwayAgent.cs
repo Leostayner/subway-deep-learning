@@ -34,11 +34,17 @@ public class SubwayAgent : Agent
 
     public override void CollectObservations()
     {
-        float rayDistance = 12f;
+        float rayDistance = 3f;
         float[] rayAngles = { 20f, 60f, 90f, 120f, 160f };
         string[] detectableObjects = { "redGoal", "blueGoal", "redAgent", "blueAgent", "wall", "ObstacleWall" };
         AddVectorObs(GetStepCount() / (float)agentParameters.maxStep);
         AddVectorObs(rayPer.Perceive(rayDistance, rayAngles, detectableObjects, 0f, 0f));
+        if (team == Team.Red) {
+            AddVectorObs(0.0f);
+        }
+        else{
+            AddVectorObs(1.0f);
+        }
     }
 
     IEnumerator GoalScoredSwapGroundMaterial(Material mat, float time)
