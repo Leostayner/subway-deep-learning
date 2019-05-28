@@ -7,6 +7,8 @@ public class AgentLogic : MonoBehaviour
 {
     public GameObject redAgent;
     public GameObject blueAgent;
+    public bool isNotTraining;
+    public int notTrainingNumAgents;
     
     SubwayAcademy academy;
     int numAgents;
@@ -15,7 +17,12 @@ public class AgentLogic : MonoBehaviour
     {
     academy = FindObjectOfType<SubwayAcademy>();
     numAgents = (int)academy.resetParameters["MultiAgents"];
-    
+
+    if(isNotTraining)
+    {
+        CreateAgent(notTrainingNumAgents, redAgent);
+        CreateAgent(notTrainingNumAgents, blueAgent);
+    }
     }
 
     void CreateAgent(int numAgents, GameObject agent)
@@ -50,12 +57,14 @@ public class AgentLogic : MonoBehaviour
 
     void Update()
     {
-        if(numAgents != (int)academy.resetParameters["MultiAgents"])
+        if(!isNotTraining)
         {
+            if(numAgents != (int)academy.resetParameters["MultiAgents"])
+            {
             numAgents = (int)academy.resetParameters["MultiAgents"];
             CreateAgent(1, redAgent);
             CreateAgent(1, blueAgent);
-
-        }
+            }
+        }   
     }
 }

@@ -131,7 +131,7 @@ public class SubwayAgent : Agent
             float zPos = Random.Range(-4.0f, 4.0f);
 
             transform.position = new Vector3(xPos, 0.25f, zPos) + ground.transform.position;
-            transform.rotation = Quaternion.Euler(0f, Random.Range(0f, 360f), 0f);
+            transform.rotation = Quaternion.Euler(0f, 90f, 0f);
         }
         else
         {
@@ -139,7 +139,7 @@ public class SubwayAgent : Agent
             float zPos = Random.Range(-4.0f, 4.0f);
 
             transform.position = new Vector3(xPos, 0.25f, zPos) + ground.transform.position;
-            transform.rotation = Quaternion.Euler(0f, Random.Range(0f, 360f), 0f);
+            transform.rotation = Quaternion.Euler(0f, -90f, 0f);
         }
     }
 
