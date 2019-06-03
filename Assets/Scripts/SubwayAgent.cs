@@ -114,7 +114,7 @@ public class SubwayAgent : Agent
         {
             if ((col.gameObject.CompareTag("redAgent") && (team == Team.Red)) || (col.gameObject.CompareTag("blueAgent") && (team == Team.Blue)))
             {
-                AddReward(-0.2f);
+                AddReward(-0.3f);
             }
             else
             {

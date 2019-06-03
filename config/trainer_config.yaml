@@ -5,7 +5,7 @@ default:
     buffer_size: 10240
     epsilon: 0.2
     gamma: 0.99
-    hidden_units: 128
+    hidden_units: 8
     lambd: 0.95
     learning_rate: 5e-3
     max_steps: 1.0e5

@@ -1272,10 +1272,5 @@ PrefabInstance:
       propertyPath: academy
       value: 
       objectReference: {fileID: 1449518234}
-    - target: {fileID: 1156191480040163235, guid: 9acc96ad9e5bd2b4e971352c7ed598b1,
-        type: 3}
-      propertyPath: isNotTraining
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9acc96ad9e5bd2b4e971352c7ed598b1, type: 3}
